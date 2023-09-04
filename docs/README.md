@@ -11,6 +11,7 @@
 1. [operator_configuration.md](https://github.com/Altinity/clickhouse-operator/blob/master/docs/operator_configuration.md) - operator configuration in details
 1. [operator_installation_openshift.md](./operator_installation_openshift.md) - how to install operator on OpenShift
 1. [operator_upgrade_openshift.md](./operator_upgrade_openshift.md) - how to upgrade operator to the different version
+1. [prerequisites.md](.prerequisistes.md) - prerequisistes for installing IBM ClickHouse Operator
 1. [prometheus_setup.md](https://github.com/Altinity/clickhouse-operator/blob/master/docs/prometheus_setup.md) - how to set up Prometheus
 1. [README.md](./README.md) - this doc
 1. [replication_setup_openshift.md](./replication_setup_openshift.md) - how to set up replication on OpenShift
