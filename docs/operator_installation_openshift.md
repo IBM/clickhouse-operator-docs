@@ -35,7 +35,7 @@ Note: If you're going to use the **All namespaces** install mode, you can skip t
       namespace: openshift-marketplace 
     spec:
       sourceType: grpc
-      image: icr.io/cpopen/clickhouse-operator-catalog:<version>
+      image: icr.io/cpopen/ibm-clickhouse-operator-catalog:<version>
       displayName: IBM ClickHouse Operator Catalog
     ```
     Note: Please specify the right image version tag while adding the catalog source.

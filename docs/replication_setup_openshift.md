@@ -1,4 +1,3 @@
-
 # Setup ClickHouse cluster with data replication
 
 ## Prerequisites
@@ -9,7 +8,7 @@
 
 ## Manifest
 
-Let's take a look on [example][chi-examples/04-replication-zookeeper-05-simple-PV-openshift.yaml], which creates a cluster with 1 shards and 2 replicas and persistent storage.
+Let's take a look on the following manifest, which creates a cluster with 1 shard, 2 replicas and the persistent storage.
 
 ```yaml
 apiVersion: "clickhouse.altinity.com/v1"
@@ -27,7 +26,7 @@ spec:
   configuration:
     zookeeper:
       nodes:
-      - host: zookeeper.zoo1ns
+      - host: zookeeper.zoons
     clusters:
       - name: replicated
         layout:
@@ -35,9 +34,9 @@ spec:
           replicasCount: 2
     users:
       default/networks/ip: "::/0"
-      default/no_password: "" 
+      default/password: <default_password>
       clickhouse_operator/networks/ip: "::/0"
-      clickhouse_operator/password: "clickhouse_operator_password" 
+      clickhouse_operator/password: <clickhouse_operator_password>
 
   templates:
     volumeClaimTemplates:
@@ -56,6 +55,11 @@ spec:
               image: icr.io/clickhouse/clickhouse:23.3.2.37-3-lts-ibm
 ```
 
+1. Make sure you are in the desired project, i.e. my-clickhouse.
+    Click the **plus** button near the top right corner\
+    ![Plus button](./img/plus_button.png)
+1. Copy and paste the ```ClickHouseInstallation``` manifest above.
+    Replace those placeholder passwords with real ones you want to use, and click the **Create** button.
 
 ## Replicated table setup
 
@@ -101,6 +105,5 @@ SELECT count() FROM events_local;
 
 [operator_installation_openshift.md]: ./operator_installation_openshift.md
 [zookeeper_setup_openshift.md]: ./zookeeper_setup_openshift.md
-[chi-examples/04-replication-zookeeper-05-simple-PV-openshift.yaml]: https://github.com/Altinity/clickhouse-operator/blob/master/docs/chi-examples/04-replication-zookeeper-05-simple-PV.yaml
 [macros]: https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#macros
 [replication]: https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/replication
