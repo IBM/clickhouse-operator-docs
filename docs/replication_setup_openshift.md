@@ -26,17 +26,17 @@ spec:
   configuration:
     zookeeper:
       nodes:
-      - host: zookeeper.zoons
+      - host: zookeeper.zoons.svc.cluster.local
     clusters:
       - name: replicated
         layout:
           shardsCount: 1
           replicasCount: 2
+        secret:
+          auto: "true"
     users:
       default/networks/ip: "::/0"
       default/password: <default_password>
-      clickhouse_operator/networks/ip: "::/0"
-      clickhouse_operator/password: <clickhouse_operator_password>
 
   templates:
     volumeClaimTemplates:
@@ -59,7 +59,7 @@ spec:
     Click the **plus** button near the top right corner\
     ![Plus button](./img/plus_button.png)
 1. Copy and paste the ```ClickHouseInstallation``` manifest above.
-    Replace those placeholder passwords with real ones you want to use, and click the **Create** button.
+    Replace the placeholder password with real one you want to use, and click the **Create** button.
 
 ## Replicated table setup
 

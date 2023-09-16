@@ -11,6 +11,28 @@
 
 If you need data replication, please install a ZooKeeper cluster on the same OpenShift by following [ZooKeeper Setup](./zookeeper_setup_openshift.md).
 
+## Configure username and password for the ```clickhouse operator``` user
+
+There is an important role called ```clickhouse-operator``` to be configured.
+Its main purpose is to manage ClickHouse instances from the ClickHouse Operator pod.
+Follow the instructions below to configure it:
+
+1. Make sure you are in the project (namespace) the clickhouse-operator pod to be deployed.
+1. Click the **plus** button near the top right corner\
+    ![Plus button](./img/plus_button.png)
+1. The following template shows secret fields to be configured.
+    ```yaml
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: clickhouse-operator
+    type: Opaque
+    stringData:
+      username: <operator-name>
+      password: <operator-password>
+    ```
+1. Copy and paste the manifest above, replace desire name and password, and click the **Create** button.
+
 ## Install via OperatorHub GUI
 
 ### Create a new project
@@ -47,7 +69,7 @@ Note: If you're going to use the **All namespaces** install mode, you can skip t
 ### Install operator from OperatorHub
 
 1. Go to **Operators > OperatorHub** on the left
-1. Type `clickhouse` into **Filter by keyword...** input box, the **IBM ClickHouse Operator** tile will be shown as follows:
+1. Type `clickhouse` into **Filter by keyword...** input box, the **IBM ClickHouse Operator** tile will be shown as follows:\
     ![Filter clickhouse](./img/filter_clickhouse.png)
 1. Click the tile and the installation page will appear
 1. Click the **Install** button to go to the configuration page:
