@@ -7,6 +7,18 @@
 1. Properly configured `kubectl`
 1. `curl`
 
+## Coexistence expectations
+
+1. IBM ClickHouse Operator is best to use ```All Namespaces``` install mode.
+    This reduces overall footprints of the operator in one cluster.
+    It also guarantees that operator version and CRD version are matched.
+1. The ```Own Namespace``` install mode is supported.
+    However, it has a potential risk of CRD version collision, if two different versions of the operator are installed in one cluster.
+1. Mixing ```All Namespaces``` and ```Own Namespace``` install mode in one cluster is unsupported.
+    These setup will have the risk of overwriting a CR status from different operators, which may cause unexpected operator behavior.
+1. Installing two ```Own Namespace``` operators in the same namespace is not supported either.
+    This can't be done through the OpenShift's GUI. However, it might be possible through manipulating subscriptions directly.
+
 ## ZooKeeper
 
 If you need data replication, please install a ZooKeeper cluster on the same OpenShift by following [ZooKeeper Setup](./zookeeper_setup_openshift.md).
