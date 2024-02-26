@@ -3,6 +3,7 @@
 1. [chi_update_add_replication.md](https://github.com/Altinity/clickhouse-operator/blob/master/docs/chi_update_add_replication.md) - how to add replication
 1. [chi_update_clickhouse_version.md](https://github.com/Altinity/clickhouse-operator/blob/master/docs/chi_update_clickhouse_version.md) - how to update version
 1. [clickhouse_config_errors_handling.md](https://github.com/Altinity/clickhouse-operator/blob/master/docs/clickhouse_config_errors_handling.md) - how operator handles ClickHouse's config errors
+1. [clickhouse_keeper_setup_openshift.md](./clickhouse_keeper_setup_openshift.md) - how to setup a ClickHouse Keeper cluster
 1. [custom_resource_explained.md](https://github.com/Altinity/clickhouse-operator/blob/master/docs/custom_resource_explained.md) - explain Custom Resource Definition in details
 1. [grafana_setup.md](https://github.com/Altinity/clickhouse-operator/blob/master/docs/grafana_setup.md) - how to set up Grafana
 1. [introduction.md](https://github.com/Altinity/clickhouse-operator/blob/master/docs/introduction.md) - general introduction
