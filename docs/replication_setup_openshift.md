@@ -3,7 +3,7 @@
 ## Prerequisites
 
 1. ClickHouse operator [installed][operator_installation_openshift.md]
-1. Zookeeper [installed][zookeeper_setup_openshift.md]
+1. Zookeeper [installed][zookeeper_setup_openshift.md], or if you prefer ClickHouse Keeper to be [installed](./clickhouse_keeper_setup_openshift.md)
 
 
 ## Manifest
@@ -60,6 +60,18 @@ spec:
     ![Plus button](./img/plus_button.png)
 1. Copy and paste the ```ClickHouseInstallation``` manifest above.
     Replace the placeholder password with real one you want to use, and click the **Create** button.
+
+Note that, if you are using a ClickHouse Keeper cluster created by a ClickHouseKeeperInstallation (CHKI) custom resource, you might need to change the following in the CHI manifest above.
+
+```yaml
+spec:
+  configuration:
+    zookeeper:
+      nodes:
+      - host: <CHKI name><.namespace if not in the same one>
+      - port: <9181 or the port number used in the CHKI settings section>
+```
+
 
 ## Replicated table setup
 

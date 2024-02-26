@@ -21,9 +21,12 @@
 
 ## ZooKeeper
 
-If you need data replication, please install a ZooKeeper cluster on the same OpenShift by following [ZooKeeper Setup](./zookeeper_setup_openshift.md).
+If you need data replication, please install a ZooKeeper cluster on the same OpenShift by following [ZooKeeper Setup](./zookeeper_setup_openshift.md). Or, if you want to use ClickHouse Keeper instead, see [ClickHouse Keeper Setup](./clickhouse_keeper_setup_openshift.md) instead.
 
 ## Configure username and password for the ```clickhouse operator``` user
+
+Note: This is a required step for the v1.0.0 release. 
+If you are installing v1.1.0 and above, the operator will generate this secret for you with ```clickhouse_operator``` and ```clickhouse_operator_password```.
 
 There is an important role called ```clickhouse-operator``` to be configured.
 Its main purpose is to manage ClickHouse instances from the ClickHouse Operator pod.

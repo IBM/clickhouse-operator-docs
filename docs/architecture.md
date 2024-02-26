@@ -23,8 +23,8 @@ The following shows how ClickHouse Operator and ZooKeeper Operator<sup>3</sup> w
 ![with ZooKeeper](./img/with-zookeeper.png)
 
 Due to ClickHouse Keeper is written in C++ and uses the RAFT algorithm implementation, using ClickHouse Keeper with ClickHouse Server is preferred.
-In **v0.2.0-prerelease**, we added the ClickHouse Keeper support to this operator.
-Now, you can give it a try applying a [ClickHouseKeeper custom resource](../deploy/clickhouse-keeper/) to create a ClickHouse Keeper cluster.
+In **v1.1.0**, we added the ClickHouse Keeper support to this operator.
+Now, you can give it a try referring [ClickHouse Keeper Setup](./clickhouse_keeper_setup_openshift.md) to create a ClickHouse Keeper cluster.
 This way, you can deploy both ClickHouse Keepers and Servers with one operator.
 
 ![with ClickHouse Keeper](./img/with-clickhouse-keeper.png)
